@@ -1,31 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   Zombie.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rshaheen <rshaheen@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/04/28 16:22:21 by rshaheen      #+#    #+#                 */
-/*   Updated: 2025/04/28 16:51:09 by rshaheen      ########   odam.nl         */
+/*   Created: 2025/04/28 16:23:46 by rshaheen      #+#    #+#                 */
+/*   Updated: 2025/04/28 16:23:47 by rshaheen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-
-class Zombie
-{
-	private:
-	std::string	name;
-	void	announce( void );
-	public:
-		Zombie(/* args */);
-		~Zombie();
-};
-
-Zombie::Zombie(/* args */)
-{
-}
-
-Zombie::~Zombie()
-{
-}
