@@ -6,7 +6,7 @@
 /*   By: rshaheen <rshaheen@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/28 16:23:46 by rshaheen      #+#    #+#                 */
-/*   Updated: 2025/05/05 14:23:43 by rshaheen      ########   odam.nl         */
+/*   Updated: 2025/05/05 15:36:53 by rshaheen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <iostream> //for std::cout
 
 //WHAT IS A CONSTRUCTOR:
-//A constructor is a special type of function. It's called when an object of that class is created
+//A constructor is a special type of function. It's called automatically when an object of that class is created
 //primary role: initialize the object. 
 //Example, Zombie::Zombie(std::string given_name) is the constructor for the "Zombie" class, 
-//The constructor can have an empty body like this {} if all work is done in the initialization list
+
 
 //LINE "Zombie::Zombie(std::string given_name)" EXPLAINED:
 //Zombie before :: is the class name. 
