@@ -6,11 +6,14 @@
 /*   By: rshaheen <rshaheen@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/28 16:22:21 by rshaheen      #+#    #+#                 */
-/*   Updated: 2025/05/05 12:43:30 by rshaheen      ########   odam.nl         */
+/*   Updated: 2025/05/05 14:25:28 by rshaheen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
+
+#include <string> //for std::string
 
 class Zombie
 {
@@ -18,15 +21,12 @@ class Zombie
 	std::string	name;
 	
 	public:
-		Zombie(/* args */);
-		~Zombie();
+		Zombie(std::string given_name); //constructor declared here
+		~Zombie();                //destructor declared here
 	void	announce( void ); //in public because subject doec not specify
 };
 
-Zombie::Zombie(/* args */)
-{
-}
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
 
-Zombie::~Zombie()
-{
-}
+#endif
