@@ -6,7 +6,7 @@
 /*   By: rshaheen <rshaheen@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/05 15:41:05 by rshaheen      #+#    #+#                 */
-/*   Updated: 2025/05/05 16:11:42 by rshaheen      ########   odam.nl         */
+/*   Updated: 2025/05/06 14:05:56 by rshaheen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ class Zombie
 	std::string	name;
 	
 	public:
-		Zombie(std::string given_name); //constructor declared here
-		~Zombie();                //destructor declared here
-	void	announce( void ); //in public because subject doec not specify
+		
+		Zombie();       // Required for new Zombie[N], cannot have parameters inside it
+		~Zombie();      
+	void	announce( void );
+	void 	setName(std::string name);
 };
 
 Zombie* zombieHorde(int N, std::string name);

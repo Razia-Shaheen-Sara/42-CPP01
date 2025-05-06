@@ -6,11 +6,11 @@
 #    By: rshaheen <rshaheen@student.42.fr>            +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/05/05 15:38:56 by rshaheen      #+#    #+#                  #
-#    Updated: 2025/05/05 16:33:58 by rshaheen      ########   odam.nl          #
+#    Updated: 2025/05/06 14:14:00 by rshaheen      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
+NAME = zombieHorde
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++11
 
@@ -49,6 +49,9 @@ fclean: clean
 	@echo "Executable Removed"
 
 re: fclean all
+
+valgrind: $(NAME)
+	valgrind --leak-check=full --track-origins=yes ./$(NAME)
 
 # Mark targets that don't produce files as phony
 .PHONY: all clean fclean re
