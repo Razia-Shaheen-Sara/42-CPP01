@@ -6,7 +6,7 @@
 /*   By: rshaheen <rshaheen@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/05 15:42:14 by rshaheen      #+#    #+#                 */
-/*   Updated: 2025/05/06 13:42:13 by rshaheen      ########   odam.nl         */
+/*   Updated: 2025/05/06 15:12:59 by rshaheen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Zombie* zombieHorde(int N, std::string name)
 {
-	Zombie *group = new Zombie[N];
+	Zombie *army = new Zombie[N];
 	
 	for (int i = 0; i < N; i++)
 	{
-		group[i].setName(name);
-		group[i].announce();
+		army[i].setName(name);
+		army[i].announce();
 	}
-	return (group);
+	return (army);
 }
