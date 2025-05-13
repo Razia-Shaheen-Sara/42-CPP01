@@ -6,7 +6,7 @@
 /*   By: rshaheen <rshaheen@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/06 16:32:49 by rshaheen      #+#    #+#                 */
-/*   Updated: 2025/05/06 17:06:27 by rshaheen      ########   odam.nl         */
+/*   Updated: 2025/05/13 15:10:02 by rshaheen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ int main()
 		jim.attack();
 		club.setType("some other type of club");
 		jim.attack();
+	}
+	{
+		HumanB tom("Tom");
+		tom.attack();
 	}
 	return 0;
 }
