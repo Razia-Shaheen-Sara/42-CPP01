@@ -6,7 +6,7 @@
 /*   By: rshaheen <rshaheen@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/13 15:28:08 by rshaheen      #+#    #+#                 */
-/*   Updated: 2025/05/15 17:40:40 by rshaheen      ########   odam.nl         */
+/*   Updated: 2025/05/16 12:32:50 by rshaheen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <string> //for empty and length
 #include <cctype> //for isspace
 #include <fstream> //for ifstream
+#include "Replace.hpp"
 
 bool is_only_whitespace(const std::string& str) //const here make sure this function does not not modify the string
 {
@@ -36,16 +37,21 @@ int main(int argc, char **argv)
 		std::cout << "Please provide filename, string1, string2" << std::endl;
 		return (1);
 	}
-	std::string filename = argv[1];
+	std::string filename = argv[1]; 
 	std::string s1 = argv[2];
 	std::string s2 = argv[3];
-	if (s1.empty() || s2.empty() || is_only_whitespace(s1) || is_only_whitespace(s2)) //empty does not check whitespace
+	if (s1.empty() || s2.empty()) //empty does not check whitespace
 	{
 		std::cerr << "Error: strings cannot be empty" << std::endl;
 		return (1);
 	}
-	std::fstream inputFile(filename);
-	if (!inputFile.is_open()) //is_open() is member function of fstream
+	if (is_only_whitespace(s1))
+	{
+		std::cerr << "Error: s1 cannot be whitespace" << std::endl;
+		return (1);
+	}
+	std::ifstream inputFile(filename);
+	if (!inputFile.is_open()) //is_open() from fstream - checks for existance and openable
 	{
 		std::cerr << "Error: Could not open the file!" << std::endl;
 		return (1);
@@ -57,7 +63,16 @@ int main(int argc, char **argv)
 	    return 1;
 	}
 	inputFile.seekg(0);  // reset to beginning
-	
+	std::ofstream outputFile(filename + ".replace");
+    if (!outputFile.is_open()) 
+	{
+        std::cerr << "Error: Could not create output file!" << std::endl;
+        return (1);
+	}
+	replace_in_file(inputFile, outputFile, s1, s2);
+	inputFile.close();//close from fstream
+	outputFile.close();//close from ofstream
+
 }
 
 //What is std::ifstream?
@@ -74,3 +89,11 @@ int main(int argc, char **argv)
 //Often used after seekg() to check file size or location.
 //It works even if the file only contains whitespace or newlines.
 //it does not need to read, so good for parsing
+
+
+//Why use ifstream instead of fstream?
+// std::ifstream = input file stream (read from file)
+// std::ofstream = output file stream (write to file)
+// std::fstream = file stream for both reading and writing
+// C++ needs exact type for non-const references: so fstream cannot be passed to replace_in_file
+

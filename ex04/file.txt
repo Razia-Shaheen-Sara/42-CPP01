@@ -1,7 +1,17 @@
-       
+An apple a day keeps the doctor away.
+I bought an apple pie and an apple juice.
+Apples are tasty, but some people prefer orange juice.
+My friend likes apple better than orange.
+I love applesauce.
 
+I love pineapple
+
+aaaa
 	        
 
-
+- $'\n'  --is considered newline
+- \n --here \ is a escape char
+- \\n will print \n
+- "\n" or '\n' takes it literally
 
 							
